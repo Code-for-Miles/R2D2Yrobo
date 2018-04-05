@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
     //@BindView(R.id.link_signup) TextView _signupLink;
     public  TextView _signupLink;
     public  TextView _emailText;
+    public static String email;
     //public static String email;
     public static boolean factCheck = false;
     public static String dataC;
@@ -105,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        String email = _emailText.getText().toString();
+        email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
         String type = "login";
         // TODO: Implement authentication logic here.

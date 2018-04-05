@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
                 //bdh.execute(type,_email,item,roomNum);
-
-                updateRequest();
+                if(!_itemRequested.getText().toString().isEmpty())
+                    updateRequest();
                 //System.out.println(roomNum);
             }
         });
@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onBackPressed(){
         //startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
     @Override
@@ -134,9 +135,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void updateRequest(){
         type = "request";
         item = _itemRequested.getText().toString();
-        _email = "miles@g.win";
+        _email = LoginActivity.email;
         backgroundDatabaseHelper dbh = new backgroundDatabaseHelper(this);
         dbh.execute(type,_email,item,roomNum);
         _itemRequested.setText("");
+        spinner.setAdapter(null);
+
     }
 }
