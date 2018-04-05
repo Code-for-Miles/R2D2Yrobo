@@ -40,9 +40,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        //final Intent intent = new Intent(this, LoginActivity.class);
-        //startActivity(this);
+        final Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
         this.setTitle("ORDER ROOM SERVICE");
 
 
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(this, LoginActivity.class));
+        //startActivity(new Intent(this, LoginActivity.class));
     }
 
     @Override
