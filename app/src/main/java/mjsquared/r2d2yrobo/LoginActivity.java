@@ -51,13 +51,14 @@ public class LoginActivity extends AppCompatActivity {
     //public static String email;
     public static boolean factCheck = false;
     public static String dataC;
+    bgLogin_Authen bgl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        bgLogin_Authen bgl = new bgLogin_Authen();
+        bgl = new bgLogin_Authen();
         bgl.execute();
         _signupLink = (TextView) findViewById(R.id.link_signup);
         _emailText = (TextView) findViewById(R.id.input_email);
@@ -113,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
         //bgLogin_Authen bgLogin = new bgLogin_Authen();
         //bgLogin.execute();
         String name = "";
+
         try {
             //JSONObject object = new JSONObject(data);
             JSONArray array = new JSONArray(dataC);
@@ -122,11 +124,11 @@ public class LoginActivity extends AppCompatActivity {
             int user_id = 0;
             for (int i = 0; i < array.length(); i++) {
                 JSONObject object = array.getJSONObject(i);
-               // user_id = object.getInt("user_id");
+               user_id = object.getInt("user_id");
                 email_db = (String) object.get("email");
                 password_db = (String) object.get("password");
                 name_db = (String) object.get("name");
-                Log.i("Name is ", name_db);
+                Log.i("Name is ",name_db);
                 if(email.equals(email_db) && password.equals(password_db)){
                     factCheck = true;
                     break;

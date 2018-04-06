@@ -35,7 +35,7 @@ public class bgLogin_Authen extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... params) {
         //String data = "";
         try {
-            URL url = new URL("http://10.117.131.134/login_auth.php?user_id=0");
+            URL url = new URL("http://10.117.131.134/login_auth.php?user_id");
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
