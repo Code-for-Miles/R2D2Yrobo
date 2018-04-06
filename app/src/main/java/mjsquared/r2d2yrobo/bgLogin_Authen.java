@@ -44,21 +44,20 @@ public class bgLogin_Authen extends AsyncTask<String,Void,String> {
 
             String line = "";
             String nullCheck = "null";
-            while ((line = bufferedReader.readLine())!=null){
+            while ((line = bufferedReader.readLine()) != null) {
                 //line = bufferedReader.readLine();
                 //stringBuilder.a
                 stringBuilder.append(line);
                 System.out.println(data);
-                data = data+line;
+                data = data + line;
             }
             //data = stringBuilder.toString().trim();
             //if(data.startsWith(nullCheck)){
-              //  data = data.substring(nullCheck.length(),data.length());
+            //  data = data.substring(nullCheck.length(),data.length());
             //}
-            /*if (data.endsWith(nullCheck)){
-                data = data.substring(0,data.length()- nullCheck.length());
-            }*/
-
+        /*if (data.endsWith(nullCheck)){
+            data = data.substring(0,data.length()- nullCheck.length());
+        }*/
 
 
         } catch (MalformedURLException e) {
@@ -66,6 +65,7 @@ public class bgLogin_Authen extends AsyncTask<String,Void,String> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return data;
     }
 

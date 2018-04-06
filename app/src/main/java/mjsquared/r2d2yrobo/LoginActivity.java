@@ -62,11 +62,13 @@ public class LoginActivity extends AppCompatActivity {
         bgl.execute();
         _signupLink = (TextView) findViewById(R.id.link_signup);
         _emailText = (TextView) findViewById(R.id.input_email);
-        _loginButton.setOnClickListener(new View.OnClickListener() {
 
+        _loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
+                //dbQuery dbQuery = new dbQuery();
+                //dbQuery.start();
             }
         });
         /**
